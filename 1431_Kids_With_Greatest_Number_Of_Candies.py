@@ -4,10 +4,7 @@ from typing import List
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         result = []
+        maxCandies = max(candies) - extraCandies
         for candy in candies:
-            if candy + extraCandies >= max(candies):
-                result.append(True)
-            else:
-                result.append(False)
-
+            result.append(candy >= maxCandies)
         return result
