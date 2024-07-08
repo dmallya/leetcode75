@@ -14,12 +14,14 @@ class Solution:
     found = False
 
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        if root.val == val:
-            return root
-        if val < root.val and root.left:
-                self.searchBST(root.left, val)
-        if val > root.val and root.right:
-                self.searchBST(root.right, val)
-        if not root.left and not root.right and root.val != val:
-            return []
+        while root:
+            if val < root.val and root.left:
+                    root = root.left
+            elif val > root.val and root.right:
+                    root = root.right
+            elif root.val == val:
+                return root
+            else:
+                break
+        return None
 
