@@ -22,4 +22,5 @@ class Solution:
         leaf1, leaf2 = [], []
         dfs(root1, leaf1)
         dfs(root2, leaf2)
+        
         return leaf1 == leaf2
